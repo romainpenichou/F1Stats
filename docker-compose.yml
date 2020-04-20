@@ -1,0 +1,14 @@
+
+version: '3'
+services:
+  db:
+    image: postgres
+    volumes:
+      - .docker/data/postgres:/data/postgres
+    ports: 
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: f1_stats_pwd
+      POSTGRES_USER: f1_stats_usr
+      POSTGRES_DB: f1_stats
+ 
