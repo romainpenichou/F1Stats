@@ -10,6 +10,7 @@ module.exports = {
       },
       constructorId: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         unique: "constructor_by_race",
         references: {
           model: 'constructors',
@@ -20,6 +21,7 @@ module.exports = {
       },
       raceId: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         unique: "constructor_by_race",
         references: {
           model: 'races',

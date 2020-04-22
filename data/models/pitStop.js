@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     driverId: {
       type: Sequelize.INTEGER,
+      allowNull: false,
       unique: "driver_by_race_by_lap",
       references: {
         model: 'drivers',
@@ -19,6 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     raceId: {
       type: Sequelize.INTEGER,
+      allowNull: false,
       unique: "driver_by_race_by_lap",
       references: {
         model: 'races',

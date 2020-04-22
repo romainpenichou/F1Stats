@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     raceId: {
       type: Sequelize.INTEGER,
+      allowNull: false,
       references: {
         model: 'races',
         key: 'id',
@@ -18,6 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     constructorId: {
       type: Sequelize.INTEGER,
+      allowNull: false,
       references: {
         model: 'constructors',
         key: 'id',
@@ -27,6 +29,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     driverId: {
       type: Sequelize.INTEGER,
+      allowNull: false,
       references: {
         model: 'drivers',
         key: 'id',

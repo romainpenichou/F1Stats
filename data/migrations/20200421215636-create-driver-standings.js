@@ -10,6 +10,7 @@ module.exports = {
       },
       driverId: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         unique: "driver_by_race",
         references: {
           model: 'drivers',
@@ -20,6 +21,7 @@ module.exports = {
       },
       raceId: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         unique: "driver_by_race",
         references: {
           model: 'races',
