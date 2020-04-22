@@ -51,11 +51,12 @@ module.exports = (sequelize, DataTypes) => {
       type: Sequelize.DATE
     }
   }, {
-    uniqueKeys: {
-        actions_unique: {
-            fields: ['seasonId', 'round']
-        }
-    }
+    indexes: [
+      {
+          unique: true,
+          fields: ['seasonId', 'round']
+      }
+  ]
   });
   Race.associate = function(models) {
     // associations can be defined here
