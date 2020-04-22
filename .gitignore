@@ -104,7 +104,6 @@ dist
 .tern-port
 
 csv
-data
 .vscode
 .docker
 *.zip

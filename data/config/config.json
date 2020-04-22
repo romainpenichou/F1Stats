@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "f1_stats_usr",
+    "password": "f1_stats_pwd",
+    "database": "f1_stats",
+    "host": "localhost",
+    "dialect": "postgres",
+    "operatorsAliases": "1"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "operatorsAliases": "0"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "operatorsAliases": "0"
+  }
+}

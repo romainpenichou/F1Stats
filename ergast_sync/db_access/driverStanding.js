@@ -17,7 +17,7 @@ module.exports.insert = async(data) => {
   values = [
     data.driverStandingsId,
     data.raceId,
-    data.driverid,
+    data.driverId,
     data.points,
     data.position,
     data.wins

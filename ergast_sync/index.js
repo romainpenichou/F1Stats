@@ -19,6 +19,7 @@ const resultAccess = require("./db_access/result");
 const raceAccess = require("./db_access/race");
 const statusAccess = require("./db_access/status");
 const seasonAccess = require("./db_access/season");
+const dbSyncFunc = require("./db_access/dbSyncFunc");
 
 const dateStart = new Date();
 
@@ -170,16 +171,27 @@ myEmitter.on('csv_load', (content) => {
           `Global error: ${x.globalError.message}, ${x.globalError.error}`: ''}`
       );
     }); 
-    
-    const dateEnd = new Date();
-    const diffTime = Math.abs(dateEnd - dateStart);
-    console.log(`total duration: ${millisecondsToTime(diffTime)}s`);
 
+    console.log("Executing load_data function ...");
+
+    try {
+      await dbSyncFunc.handle();
+      const dateEnd = new Date();
+      const diffTime = Math.abs(dateEnd - dateStart);
+      console.log(`total duration: ${millisecondsToTime(diffTime)}s`);
+    } catch(ex) {
+      console.log("One error is occurring during sync in database");
+      console.log(ex);
+    }
+    
     process.exit(0);
   }
 });
 
 
 module.exports.sync = async () => {
-  csvToLoad.forEach(x => loadFromCsv(x.file, x.entityAccess));
+  var result = await dbSyncFunc.handle();
+  console.log(result);
+
+  //csvToLoad.forEach(x => loadFromCsv(x.file, x.entityAccess));
 }

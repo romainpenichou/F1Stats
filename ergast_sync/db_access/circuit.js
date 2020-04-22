@@ -20,7 +20,7 @@ module.exports.insert = async(data) => {
     data.name,
     data.location,
     data.country,
-    data.lat,
+    data.lat=== '\\N' ? null : data.alt,
     data.lng,
     data.alt,
     data.url
