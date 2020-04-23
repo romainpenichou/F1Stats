@@ -146,7 +146,7 @@ myEmitter.on('line_inserted', (content) => {
   }
 });
 
-myEmitter.on('csv_load', (content) => {
+myEmitter.on('csv_load', async (content) => {
   loadResutlByCsv.push(content);
 
   progressBars[content.csv].update(content.success.length + content.errors.length, {
@@ -190,8 +190,5 @@ myEmitter.on('csv_load', (content) => {
 
 
 module.exports.sync = async () => {
-  var result = await dbSyncFunc.handle();
-  console.log(result);
-
-  //csvToLoad.forEach(x => loadFromCsv(x.file, x.entityAccess));
+  csvToLoad.forEach(x => loadFromCsv(x.file, x.entityAccess));
 }
