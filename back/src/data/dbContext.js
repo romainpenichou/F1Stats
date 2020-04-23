@@ -10,6 +10,8 @@ class DbContext {
     }
 
     this.driversModel = driversModel(this.sequelize, Sequelize);
+    console.log(this.driversModel);
+    
   }
 
 }

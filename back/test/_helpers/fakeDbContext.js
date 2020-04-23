@@ -1,5 +1,5 @@
 const sequelize = require('sequelize');
-const DbContext = require('../../data/dbContext');
+const DbContext = require('../../src/data/dbContext');
 
 const dbConfig = {
   username: "f1_stats_usr",

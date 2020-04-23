@@ -23,7 +23,7 @@ const dbSyncFunc = require("./db_access/dbSyncFunc");
 
 const dateStart = new Date();
 
-const csvPath = path.join(__dirname, '..', 'csv');
+const csvPath = path.join(__dirname, 'csv');
 
 const myEmitter = new EventEmitter();
 

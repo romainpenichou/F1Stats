@@ -6,7 +6,7 @@ const {
 } = require('../../_helpers/fakeDbContext');
 
 const DriverRepository = 
-  require('../../../data/repositories/driverRepository');
+  require('../../../src/data/repositories/driverRepository');
 
 describe('Driver repository tests', () => {
   before(async () => {
@@ -16,6 +16,6 @@ describe('Driver repository tests', () => {
     const driverRepository = new DriverRepository(fakeDbContext);
     const drivers = await driverRepository.findAll();
 
-    assert.equal(drivers.length, 2);
+    assert.equal(drivers.length, 1);
   })
 })
