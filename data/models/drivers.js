@@ -1,48 +1,48 @@
 'use strict';
-module.exports = (sequelize, DataTypes) => {
+module.exports =  (sequelize, DataTypes) => {
   const drivers = sequelize.define('drivers', {
     id: {
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     ref: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
       unique: true
     },
     number: {
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     code: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING
     },
     firstname: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       allowNull: false
     },
     lastname: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       allowNull: false
     },
     birthday: {
-      type: Sequelize.DATE
+      type: DataTypes.DATE
     },
     nationality: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       allowNull: false
     },
     url: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING
     },
     createdAt: {
       allowNull: false,
-      defaultValue: Sequelize.fn('NOW'),
-      type: Sequelize.DATE,
+      defaultValue: sequelize.NOW,
+      type: DataTypes.DATE,
     },
     updatedAt: {
-      type: Sequelize.DATE
+      type: DataTypes.DATE
     }
   }, {});
   drivers.associate = function(models) {

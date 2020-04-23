@@ -5,22 +5,22 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     year: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       unique: true
     },
     url: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING
     },
     createdAt: {
       allowNull: false,
-      defaultValue: Sequelize.fn('NOW'),
-      type: Sequelize.DATE,
+      defaultValue: sequelize.NOW,
+      type: DataTypes.DATE,
     },
     updatedAt: {
-      type: Sequelize.DATE
+      type: DataTypes.DATE
     }
   }, {});
   Season.associate = function(models) {

@@ -1,46 +1,46 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Circuit = sequelize.define('circuits', {
-    iid: {
+    id: {
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     ref: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
       unique: true
     },
     name: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     location: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING
     },
     country: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING
     },
     lat: {
-      type: Sequelize.FLOAT
+      type: DataTypes.FLOAT
     },
     lng: {
-      type: Sequelize.FLOAT
+      type: DataTypes.FLOAT
     },
     alt: {
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     url: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING
     },
     createdAt: {
       allowNull: false,
-      defaultValue: Sequelize.fn('NOW'),
-      type: Sequelize.DATE,
+      defaultValue: sequelize.NOW,
+      type: DataTypes.DATE,
     },
     updatedAt: {
-      type: Sequelize.DATE
+      type: DataTypes.DATE
     }
   }, {});
   Circuit.associate = function(models) {

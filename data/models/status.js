@@ -5,19 +5,19 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     label: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       unique: true
     },
     createdAt: {
       allowNull: false,
-      defaultValue: Sequelize.fn('NOW'),
-      type: Sequelize.DATE,
+      defaultValue: sequelize.NOW,
+      type: DataTypes.DATE,
     },
     updatedAt: {
-      type: Sequelize.DATE
+      type: DataTypes.DATE
     }
   }, {});
   status.associate = function(models) {

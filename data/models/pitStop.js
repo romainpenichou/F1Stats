@@ -5,10 +5,10 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     driverId: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       unique: "driver_by_race_by_lap",
       references: {
@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'SET NULL',
     },
     raceId: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       unique: "driver_by_race_by_lap",
       references: {
@@ -30,38 +30,38 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'SET NULL',
     },
     stop: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       unique: "driver_by_race_by_lap",
     },
     lap: {
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     position: {
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     time: {
-      type: Sequelize.TIME
+      type: DataTypes.TIME
     },
     duration: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING
     },
     milliseconds: {
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     createdAt: {
       allowNull: false,
-      defaultValue: Sequelize.fn('NOW'),
-      type: Sequelize.DATE,
+      defaultValue: sequelize.NOW,
+      type: DataTypes.DATE,
     },
     updatedAt: {
-      type: Sequelize.DATE
+      type: DataTypes.DATE
     }
   }, {
     tableName: 'pit_stops'
   });
   pitStop.associate = function(models) {
-    driverStandings.belongsTo(models.races);
-    driverStandings.belongsTo(models.drivers);
+    pitStop.belongsTo(models.races);
+    pitStop.belongsTo(models.drivers);
   };
   return pitStop;
 };

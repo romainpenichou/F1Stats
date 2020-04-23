@@ -5,10 +5,10 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     raceId: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'races',
@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'SET NULL',
     },
     constructorId: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'constructors',
@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'SET NULL',
     },
     driverId: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'drivers',
@@ -38,43 +38,43 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'SET NULL',
     },
     number: {
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     grid: {
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     position: {
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     positionOrder: {
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     points: {
-      type: Sequelize.FLOAT
+      type: DataTypes.FLOAT
     },
     laps: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
     },
     time: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING
     },
     millisecondes: {
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     fastestlap: {
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     rank: {
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     fastestLapTime: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING
     },
     fastestLapSpeed: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING
     },
     statusId: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       references: {
         model: 'status',
         key: 'id',
@@ -84,18 +84,18 @@ module.exports = (sequelize, DataTypes) => {
     },
     createdAt: {
       allowNull: false,
-      defaultValue: Sequelize.fn('NOW'),
-      type: Sequelize.DATE,
+      defaultValue: sequelize.NOW,
+      type: DataTypes.DATE,
     },
     updatedAt: {
-      type: Sequelize.DATE
+      type: DataTypes.DATE
     }
   }, {});
   results.associate = function(models) {
-    driverStandings.belongsTo(models.races);
-    driverStandings.belongsTo(models.drivers);
-    driverStandings.belongsTo(models.constructors);
-    driverStandings.belongsTo(models.status);
+    results.belongsTo(models.races);
+    results.belongsTo(models.drivers);
+    results.belongsTo(models.constructors);
+    results.belongsTo(models.status);
   };
   return results;
 };

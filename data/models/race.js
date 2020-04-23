@@ -5,10 +5,10 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     seasonId: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       unique: 'unique_round_by_season',
       references: {
         model: 'seasons',
@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'SET NULL',
     },
     circuitId: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       references: {
         model: 'circuits',
         key: 'id',
@@ -28,27 +28,27 @@ module.exports = (sequelize, DataTypes) => {
     },
     round: {
       unique: 'unique_round_by_season',
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     name: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING
     },
     date: {
-      type: Sequelize.DATE
+      type: DataTypes.DATE
     },
     time: {
-      type: Sequelize.TIME
+      type: DataTypes.TIME
     },
     url: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING
     },
     createdAt: {
       allowNull: false,
-      defaultValue: Sequelize.fn('NOW'),
-      type: Sequelize.DATE,
+      defaultValue: sequelize.NOW,
+      type: DataTypes.DATE,
     },
     updatedAt: {
-      type: Sequelize.DATE
+      type: DataTypes.DATE
     }
   }, {
     indexes: [

@@ -5,10 +5,10 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     constructorId: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
         allowNull: false,
         unique: "constructor_by_race",
       references: {
@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'SET NULL',
     },
     raceId: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       unique: "constructor_by_race",
       references: {
@@ -30,15 +30,15 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'SET NULL',
     },
     points: {
-      type: Sequelize.FLOAT
+      type: DataTypes.FLOAT
     },
     createdAt: {
       allowNull: false,
-      defaultValue: Sequelize.fn('NOW'),
-      type: Sequelize.DATE,
+      defaultValue: sequelize.NOW,
+      type: DataTypes.DATE,
     },
     updatedAt: {
-      type: Sequelize.DATE
+      type: DataTypes.DATE
     }
   }, {
     tableName: 'constructor_result'

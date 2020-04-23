@@ -5,28 +5,28 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     ref: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       unique: true
     },
     name: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING
     },
     nationality: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING
     },
     url: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING
     },
     createdAt: {
       allowNull: false,
-      defaultValue: Sequelize.fn('NOW'),
-      type: Sequelize.DATE,
+      defaultValue: sequelize.NOW,
+      type: DataTypes.DATE,
     },
     updatedAt: {
-      type: Sequelize.DATE
+      type: DataTypes.DATE
     }
   }, {});
   constructors.associate = function(models) {

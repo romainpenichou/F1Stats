@@ -5,10 +5,10 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     raceId: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       unique: "driver_by_race",
       references: {
@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'SET NULL',
     },
     constructorId: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
         allowNull: false,
         references: {
         model: 'constructors',
@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'SET NULL',
     },
     driverId: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       unique: "driver_by_race",
       references: {
@@ -40,33 +40,33 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'SET NULL',
     },
     number: {
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     position: {
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     q1: {
-      type: Sequelize.TIME
+      type: DataTypes.TIME
     },
     q2: {
-      type: Sequelize.TIME
+      type: DataTypes.TIME
     },
     q3: {
-      type: Sequelize.TIME
+      type: DataTypes.TIME
     },
     createdAt: {
       allowNull: false,
-      defaultValue: Sequelize.fn('NOW'),
-      type: Sequelize.DATE,
+      defaultValue: sequelize.NOW,
+      type: DataTypes.DATE,
     },
     updatedAt: {
-      type: Sequelize.DATE
+      type: DataTypes.DATE
     }
   }, {});
   qualifying.associate = function(models) {
-    driverStandings.belongsTo(models.races);
-    driverStandings.belongsTo(models.drivers);
-    driverStandings.belongsTo(models.constructors);
+    qualifying.belongsTo(models.races);
+    qualifying.belongsTo(models.drivers);
+    qualifying.belongsTo(models.constructors);
   };
   return qualifying;
 };
