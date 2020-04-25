@@ -1,4 +1,5 @@
 const express = require('express');
+var cors = require('cors')
 
 const config = require('./config.json');
 const appContainer = require('./appContainer');
@@ -12,6 +13,8 @@ let server;
  */
 const startServer = async () => {
   app = express();
+  app.use(cors());
+  
   const container = await appContainer.load();
 
   app.use('/', router({
