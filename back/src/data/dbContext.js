@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const driversModel = require('./models/drivers');
 
 class DbContext {
-  constructor(config) {
+  constructor({ config }) {
     if (config.use_env_variable) {
       this.sequelize = new Sequelize(process.env[config.use_env_variable], config);
     } else {

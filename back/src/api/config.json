@@ -1,4 +1,7 @@
 {
+  "server": {
+    "port": 3000
+  },
   "dbConfig": {
     "username": "f1_stats_usr",
     "password": "f1_stats_pwd",

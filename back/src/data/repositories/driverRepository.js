@@ -1,5 +1,5 @@
 class DriverRepository {
-  constructor(dbContext) {
+  constructor({ dbContext }) {
     this._dbContext = dbContext;
   }
 

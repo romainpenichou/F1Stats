@@ -4,20 +4,28 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha 'test/**/*.test.js'",
+    "unit-test": "mocha 'tests/unit_tests/**/*.test.js'",
+    "integration-test": "mocha --exit 'tests/integration_tests/**/*.test.js'",
+    "test": "mocha --exit 'tests/**/*.test.js'",
+    "coverage": "nyc npm run test",
+    "check-coverage": "nyc --check-coverage npm run test",
     "start": "nodejs index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "awilix": "^4.2.6",
     "cli-progress": "^3.7.0",
     "csv-parser": "^2.3.2",
+    "express": "^4.17.1",
     "node-fetch": "^2.6.0",
     "pg": "^8.0.2",
     "pg-hstore": "^2.3.3",
     "sequelize": "^5.21.6"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
     "mocha": "^7.1.1",
     "nyc": "^15.0.1",
     "sqlite3": "^4.1.1"
