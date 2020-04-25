@@ -103,7 +103,12 @@ dist
 # TernJS port file
 .tern-port
 
+.nyc_output
+coverage
+
+
 csv
 .vscode
 .docker
 *.zip
+draft
