@@ -132,16 +132,11 @@ CREATE TABLE work.status(
 	status varchar(255)
 );
 
-
-
-
-
 CREATE OR REPLACE FUNCTION public.load_data()
  RETURNS boolean
  LANGUAGE plpgsql
 AS $function$
 BEGIN	
-		
 	insert into seasons(year, url)
 	select year, url from "work".seasons
 	on conflict(year) do 
@@ -189,9 +184,7 @@ BEGIN
 			nationality = EXCLUDED.nationality,
 			url = EXCLUDED.url,
 			"updatedAt" = NOW();
-		
-	delete from races;
-	
+			
 	insert into races("seasonId", "circuitId", "round", "name", "date", "time", url)
 	select seasons.id as seasons_id
 			, public.circuits.id as circuit_id
