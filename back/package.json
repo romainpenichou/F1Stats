@@ -9,7 +9,7 @@
     "test": "mocha --exit 'tests/**/*.test.js'",
     "coverage": "nyc npm run test",
     "check-coverage": "nyc --check-coverage npm run test",
-    "start": "nodejs index.js"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
