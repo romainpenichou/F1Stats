@@ -1,6 +1,7 @@
 const envName = process.env.APP_ENV || "development";
 
-let appConfig = {};
+let appConfig = {
+};
 
 let envConfig = {
   development: {

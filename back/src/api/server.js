@@ -23,7 +23,7 @@ const startServer = async () => {
     appContainer: container
   }));
 
-  const port = config.server.port || 3000;  
+  const port = config.server.port;  
   server = app.listen(port, function () {
     console.log(`App listening on port ${port}!`)
   });
