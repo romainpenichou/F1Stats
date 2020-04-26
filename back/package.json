@@ -9,7 +9,8 @@
     "test": "mocha --exit 'tests/**/*.test.js'",
     "coverage": "nyc npm run test",
     "check-coverage": "nyc --check-coverage npm run test",
-    "start": "node index.js"
+    "start:dev": "node index.js",
+    "start": "pm2-runtime start ecosystem.config.js"
   },
   "author": "",
   "license": "ISC",
@@ -22,6 +23,7 @@
     "node-fetch": "^2.6.0",
     "pg": "^8.0.2",
     "pg-hstore": "^2.3.3",
+    "pm2": "^4.4.0",
     "sequelize": "^5.21.6",
     "sequelize-cli": "^5.5.1"
   },
