@@ -1,6 +1,6 @@
 const { createContainer, asClass, asFunction } = require('awilix');
 
-const config = require('./config.json');
+const config = require('./config.js');
 const DbContext = require('../data/dbContext');
 /**
  * Load repositories

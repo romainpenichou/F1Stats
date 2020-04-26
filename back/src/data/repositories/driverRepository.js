@@ -6,7 +6,9 @@ class DriverRepository {
   findAll() {
     console.log(this._dbContext.driversModel);
     
-    return this._dbContext.driversModel.findAll()
+    return this._dbContext.driversModel.findAll({
+      
+    })
   }
 }
 

@@ -1,12 +1,14 @@
 const express = require('express');
 var cors = require('cors')
 
-const config = require('./config.json');
+const config = require('./config.js');
 const appContainer = require('./appContainer');
 const router = require('./router');
 
 let app;
 let server;
+
+console.log(config);
 
 /**
  * create and start express server

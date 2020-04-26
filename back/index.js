@@ -11,8 +11,5 @@
 
 
 const server = require('./src/api/server');
-const config = require('./config.json');
 
-server.start({
-  config: config
-});
+server.start();
