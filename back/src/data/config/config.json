@@ -7,6 +7,12 @@
     "dialect": "postgres",
     "operatorsAliases": "1"
   },
+  "staging": {
+    "use_env_variable": "DATABASE_URL",
+    "dialect": "postgres",
+    "operatorsAliases": "1"
+  },
+  
   "test": {
     "username": "root",
     "password": null,
